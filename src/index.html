@@ -6,9 +6,87 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="root">
-      <h1>Hello world!</h1>
+    <!--Pantalla Bienvenida -->
+    <div id="portada" class="portada" >
+      <h1>Mis Mejores Notas</h1>
+      <a href="#formular">NEXT</a>
     </div>
-    <script src="index.js" type="module"></script>
+   
+    <!--Pantalla Datos -->
+   <div class="fondo_formulario"><!--div contiene toda la estructura del formulario-->
+    <div class="cuentanos" id="formular"> <!--div para agregar estilo -->
+      <form action="reg.php" method="POST""formulario"> <!--conecta con base de datos por medio de POST-->
+      <h1 class="formulario_titulo">Cuentanos Sobre ti</h1>
+    <tr>
+      <td><label for="" class="formulario_label">Nombre</label></td>
+      <td><input type="text" name="nombre" class="formulario_input"></input></td>
+    </tr>
+    <tr>
+      <td><label for="" class="formulario_label">Usuario</label></td>
+      <td><input type="text" name="user" class="formulario_input"></input></td>
+    </tr>
+    <tr>
+      <td><label for="" class="formulario_label">Correo</label></td>
+      <td><input type="text" name="correo" class="formulario_input"></input></td>
+    </tr>
+    <tr>
+     <td><label for="" class="formulario_label">Telefono</label></td>
+      <td><input type="int" name="telefono" class="formulario_input"></input></td>
+    </tr>
+    <tr>
+      <td><label for="" class="formulario_label">Contacto de confianza</label></td>
+      <td><input type="text" name="contactoConfianza" class="formulario_input"></input></td>
+    </tr>
+    <tr>
+      <td><label for="" class="formulario_label">Nip</label></td>
+       <td><input type="int" name="nip" class="formulario_input"></input></td>
+     </tr>
+     <tr>
+      <td><label for="" class="formulario_label">Repite tu Nip</label></td>
+       <td><input type="int" name="Rnip" class="formulario_input"></input></td>
+     </tr>
+     <tr>
+      <td><label><input class="formulario__submit" type="submit" value="Registrarme"></input></label></td>
+      <td><label><input class="formulario__reset" type="reset" value="Reestablecer"></input></label></td>
+    </tr>
+      
+    </form>
+    </div>
+  </div>
+
+
+  
+    <!--Inicia pantalla de ayuda -->
+    <div id="help" class="help" > 
+    <h2>"Para acceder a nuestro centro de ayuda ingresa tu NIP"</h2>
+    <input type="number" id="nip" size="4">
+    </div>
+  
+    <!--Texto que sera cifrado --> 
+   
+    <div id="cifrado" class="cifrado"> 
+    <h3>"Cuentanos..."</h3>
+    <textarea id="notehelp" cols="20" rows="5" >
+    </textarea>
+    <br>
+    <input type="button" value="Cifrar" id="cifrar">
+    <h3>"Asi enviaremos tu mensaje"</h3>
+    <textarea id="cifrado" cols="20" rows="5" >
+    </textarea>
+    <br>
+    <input type="button" value="Enviar" id="enviar">
+    <br>
+    <!--Texto que sera descifrado --> 
+ <h3>"Aqui puedes desencriptar tu mensaje"</h3>
+  <textarea id="answer" cols="20" rows="5" >
+  </textarea>
+  <br>
+  <input type="button" value="Descifrar" id="descifrar">
+  <h3>"Mensaje recibido"</h3>
+  <textarea id="descifrado" cols="20" rows="5" >
+  </textarea>
+  </div>
+
+    <script src="index.js"></script>
   </body>
 </html>

@@ -1,0 +1,108 @@
+*{box-sizing: border-box}
+
+body{
+  width: 100vh;
+  height:100%;
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, sans-serif;
+}
+.portada
+{
+  font-size: xx-large;
+  font: oblique bold 320% cursive;
+  width: 100vw;
+  height: 100vh;
+  background:url("img/juntas.png") no-repeat; opacity: 0.8787;
+  background-size: cover;
+  background-color: rgba(149, 250, 199, 0.349);
+  display: block;
+  float: left;
+  color: rgba(199, 9, 98, 0.993);
+  text-align: center;
+
+}
+.fondo_formulario
+{
+  width: 100vw;
+  background-color:rgba(149, 250, 199, 0.226);
+  display: block;
+
+  float: left;
+  color: rgba(199, 9, 98, 0.993);
+}
+/*efecto de color cuestionaro*/
+.cuentanos
+{
+  width: 50%;
+  max-width: 100%;
+  margin-left: 25%;
+  margin-top: 5%;
+  display: block;
+  float: left;
+  padding: 20px;
+  box-shadow: 0 0 30px 1px rgba(35, 243, 146, 0.836);
+}
+
+/*tamaño y tipo de texto values*/
+.formulario_input, .formulario__label, .formulario__submit, .formulario__reset
+{
+  display:block;
+  width:100%;
+  font-size: 1.2em;
+  font-family: sans-serif;
+}
+/*contorno y fondo de values*/
+.formulario_input
+{
+  padding: 20px;
+   background: rgba(138, 240, 218, 0.253);
+  margin-bottom: 10px;
+  border: 2px solid rgba(0,0,0,0.3);
+}
+
+.formulario__submit 
+{
+  background: rgba(0, 0, 0, 0.3);
+  color : rgba(199, 9, 98, 0.993);
+  padding: 10px,20px;
+  cursor: pointer;
+  border: 2px solid rgba(0,0,0,0.3); 
+}
+.formulario__reset
+{
+  background: rgba(0, 0, 0, 0.3);
+  color : rgba(199, 9, 98, 0.993);
+  padding: 10px,20px;
+  cursor: pointer;
+  border: 2px solid rgba(0,0,0,0.3);
+}
+
+/*pantalla de acceso al cifrado*/ 
+.help
+{
+  height: 100vh;
+  width: 100vw;
+  font: oblique bold 250% cursive;
+  background:url("img/ayuda.png") no-repeat;
+  background-size: cover;
+  background-color: rgba(149, 250, 199, 0.349);
+  display: block;
+  float: left;
+  color: rgb(199, 9, 98);
+  text-align: center;
+}
+
+.pcifrado
+{
+  width: 100vw;
+  height: 100vh;
+  background:url("img/meimportas.png") no-repeat;
+  background-size: cover;
+  background-color: rgba(89, 236, 113, 0.623);
+  display: block;
+  float: left;
+  color: rgba(56, 6, 58, 0.993);
+  text-align: center;
+}
+/*pantalla cifrado y descifrado*/
