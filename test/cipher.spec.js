@@ -1,8 +1,8 @@
 // [Español]
-// Importamos el objeto `cipher`, que contiene los métodos `encode` y `decode`
+// Importamos el objeto `cipher`, que contiene los métodos `cifrar` y `descifrar`
 //
 // [Português]
-// Importamos o objeto `cipher`, que contém os métodos `encode` e `decode`
+// Importamos o objeto `cipher`, que contém os métodos `cifrar` e `descifrar`
 
 import cipher from '../src/cipher';
 
@@ -12,21 +12,21 @@ describe('cipher', () => {
     expect(typeof cipher).toBe('object');
   });
 
-  describe('cipher.encode', () => {
+  describe('cipher.cifrar', () => {
 
     it('should be a function', () => {
-      expect(typeof cipher.encode).toBe('function');
+      expect(typeof cipher.cifrar).toBe('function');
     });
 
     it('should throw TypeError when invoked with wrong argument types', () => {
-      expect(() => cipher.encode()).toThrow(TypeError);
-      expect(() => cipher.encode(0)).toThrow(TypeError);
-      expect(() => cipher.encode(null, [])).toThrow(TypeError);
-      expect(() => cipher.encode(0, 0)).toThrow(TypeError);
+      expect(() => cipher.cifrar()).toThrow(TypeError);
+      expect(() => cipher.cifrar(0)).toThrow(TypeError);
+      expect(() => cipher.cifrar(null, [])).toThrow(TypeError);
+      expect(() => cipher.cifrar(0, 0)).toThrow(TypeError);
     });
 
     it('should return "HIJKLMNOPQRSTUVWXYZABCDEFG" for "ABCDEFGHIJKLMNOPQRSTUVWXYZ" with offset 33', () => {
-      expect(cipher.encode(33, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')).toBe('HIJKLMNOPQRSTUVWXYZABCDEFG');
+      expect(cipher.cifrar('ABCDEFGHIJKLMNOPQRSTUVWXYZ', 33)).toBe('HIJKLMNOPQRSTUVWXYZABCDEFG');
     });
 
     // Hacker edition
@@ -40,7 +40,7 @@ describe('cipher', () => {
     // abaixo.
     //
     // it('should return "hijklmnopqrstuvwxyzabcdefg" for "abcdefghijklmnopqrstuvwxyz" with offset 33', () => {
-    //   expect(cipher.encode(33, 'abcdefghijklmnopqrstuvwxyz')).toBe('hijklmnopqrstuvwxyzabcdefg');
+    //   expect(cipher.cifrar(33, 'abcdefghijklmnopqrstuvwxyz')).toBe('hijklmnopqrstuvwxyzabcdefg');
     // });
 
     // Hacker edition
@@ -54,25 +54,25 @@ describe('cipher', () => {
     // teste abaixo.
     //
     // it('should return " !@" for " !@"', () => {
-    //   expect(cipher.encode(33, ' !@')).toBe(' !@');
+    //   expect(cipher.cifrar(33, ' !@')).toBe(' !@');
     // });
   });
 
-  describe('cipher.decode', () => {
+  describe('cipher.descifrar', () => {
 
     it('should be a function', () => {
-      expect(typeof cipher.decode).toBe('function');
+      expect(typeof cipher.descifrar).toBe('function');
     });
 
     it('should throw TypeError when invoked with wrong argument types', () => {
-      expect(() => cipher.decode()).toThrow(TypeError);
-      expect(() => cipher.decode(0)).toThrow(TypeError);
-      expect(() => cipher.decode(null, [])).toThrow(TypeError);
-      expect(() => cipher.decode(0, 0)).toThrow(TypeError);
+      expect(() => cipher.descifrar()).toThrow(TypeError);
+      expect(() => cipher.descifrar(0)).toThrow(TypeError);
+      expect(() => cipher.descifrar(null, [])).toThrow(TypeError);
+      expect(() => cipher.descifrar(0, 0)).toThrow(TypeError);
     });
 
     it('should return "ABCDEFGHIJKLMNOPQRSTUVWXYZ" for "HIJKLMNOPQRSTUVWXYZABCDEFG" with offset 33', () => {
-      expect(cipher.decode(33, 'HIJKLMNOPQRSTUVWXYZABCDEFG')).toBe('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+      expect(cipher.descifrar('HIJKLMNOPQRSTUVWXYZABCDEFG', 33)).toBe('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
     });
 
     //
@@ -87,7 +87,7 @@ describe('cipher', () => {
     // abaixo.
     //
     // it('should return "abcdefghijklmnopqrstuvwxyz" for "hijklmnopqrstuvwxyzabcdefg" with offset 33', () => {
-    //   expect(cipher.decode(33, 'hijklmnopqrstuvwxyzabcdefg')).toBe('abcdefghijklmnopqrstuvwxyz');
+    //   expect(cipher.descifrar(33, 'hijklmnopqrstuvwxyzabcdefg')).toBe('abcdefghijklmnopqrstuvwxyz');
     // });
 
     // Hacker edition
@@ -101,7 +101,7 @@ describe('cipher', () => {
     // teste abaixo.
     //
     // it('should return " !@" para " !@"', () => {
-    //   expect(cipher.decode(33, ' !@')).toBe(' !@');
+    //   expect(cipher.descifrar(33, ' !@')).toBe(' !@');
     // });
   });
 
